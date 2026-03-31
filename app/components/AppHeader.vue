@@ -1,20 +1,29 @@
 <script setup lang="ts">
-const route = useRoute()
+const route = useRoute();
 
-const items = computed(() => [{
-  label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs')
-}, {
-  label: 'Pricing',
-  to: '/pricing'
-}, {
-  label: 'Blog',
-  to: '/blog'
-}, {
-  label: 'Changelog',
-  to: '/changelog'
-}])
+const items = computed(() => [
+	{
+		label: "Features",
+		to: "/features",
+	},
+	{
+		label: "Pricing",
+		to: "/pricing",
+	},
+	{
+		label: "Blog",
+		to: "/blog",
+	},
+	{
+		label: "Docs",
+		to: "/docs",
+		active: route.path.startsWith("/docs"),
+	},
+	{
+		label: "Changelog",
+		to: "/changelog",
+	},
+]);
 </script>
 
 <template>
@@ -46,16 +55,8 @@ const items = computed(() => [{
         label="Sign in"
         color="neutral"
         variant="outline"
-        to="/login"
+        to="https://app.lucy.vet"
         class="hidden lg:inline-flex"
-      />
-
-      <UButton
-        label="Sign up"
-        color="neutral"
-        trailing-icon="i-lucide-arrow-right"
-        class="hidden lg:inline-flex"
-        to="/signup"
       />
     </template>
 

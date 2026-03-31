@@ -1,0 +1,64 @@
+title: Explore Lucy VPMS features
+description: Placeholder copy for a dedicated features overview. Use this page to introduce the product in broad strokes before drilling into each workflow area below.
+seo:
+  title: Features
+  description: Placeholder overview text for the Lucy VPMS features page.
+sections:
+  - id: scheduling
+    title: Keeps you on schedule
+    description: Intuitive scheduling tools that help clinics manage appointments, resources, and patient flow with ease.
+    orientation: horizontal
+    features:
+      - name: Scheduling forms for new and returning patients
+        description: Flexible scheduling forms that capture all necessary information for both new and returning patients.
+        icon: i-lucide-calendar
+      - name: Automated reminders
+        description: Text and email reminders that reduce no-shows and keep pet owners informed.
+        icon: i-lucide-bell-ring
+      - name: Team availability controls
+        description: Assign staff, rooms, and equipment to appointments with clear visibility into availability and conflicts.
+        icon: i-lucide-users
+  - id: records
+    title: Medical records built for real exam-room work
+    description: Create, access, and update patient records with tools designed for the realities of clinical care.
+    orientation: horizontal
+    reverse: true
+    features:
+      - name: Unified patient timelines
+        description: Comprehensive timelines that bring together medical history, treatments, and communications in one place.
+        icon: i-lucide-file-heart
+      - name: Fast SOAP templates
+        description: Reusable templates that help clinicians document routine visits consistently.
+        icon: i-lucide-file-text
+      - name: Secure cloud access
+        description: Access patient records from any device without local server maintenance overhead.
+        icon: i-lucide-cloud
+  - id: operations
+    title: Billing, inventory, and follow-up in one system
+    description: Streamline your clinic's operations with integrated tools for billing, inventory management, and post-visit follow-up.
+    orientation: horizontal
+    features:
+      - name: Checkout without double entry
+        description: Turn completed treatments into invoices with fewer manual handoffs.
+        icon: i-lucide-credit-card
+      - name: Inventory visibility
+        description: Track stock levels, purchase needs, and usage across medications and supplies.
+        icon: i-lucide-package
+      - name: Post-visit follow-up tools
+        description: Tools for care instructions, reminders, and outreach that help clinics stay connected after the appointment.
+        icon: i-lucide-message-square-heart
+  - id: parents
+    title: Engage pet parents with tools that fit their needs
+    description: Pet parents can easily access their pet's health information, manage appointments, and pay invoices in one place.
+    orientation: horizontal
+    reverse: true
+    features:
+      - name: Unified patient timelines
+        description: Comprehensive timelines that bring together medical history, treatments, and communications in one place.
+        icon: i-lucide-file-heart
+      - name: Easy sign-in
+        description: Simple and secure sign-in process for parents to access their pet's information.
+        icon: i-lucide-file-text
+      - name: Secure cloud access
+        description: Parents can access and export their pet's records from any device without needing to call.
+        icon: i-lucide-cloud

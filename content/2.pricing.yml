@@ -1,69 +1,49 @@
-title: A plan for every need
-description: Our plans are designed to meet the requirements of both beginners and players. Get the right plan that suits you.
+title: A plan for every practice
+description: Our plans are designed to meet the requirements of both small and large veterinary practices. Get the right plan that suits your clinic. Get 2 months free when you choose annual billing.
 seo:
   title: Pricing
   description: Choose the plan that's right for you.
 navigation.icon: i-lucide-credit-card
 plans:
   - title: Basic
-    description: A basic plan for individuals.
+    description: A basic plan for small veterinary practices.
     price:
-      month: $9.9
-      year: $99.9
+      month: $100
+      year: $1000
     button:
       label: Get Started
       color: neutral
       variant: subtle
     features:
-      - 1 GB Storage
-      - 1 Email Account
-      - 1 Domain
-      - 1 Website
-      - 1 Database
-      - 1 SSL Certificate
-      - 1 Support Ticket
+      - 10 GB Storage
+      - 10 Staff Accounts
+      - Full access to all features
   - title: Standard
-    description: A standard plan for small teams.
+    description: A standard plan for growing veterinary practices.
     price:
-      month: $19.9
-      year: $199.9
+      month: $150
+      year: $1500
     highlight: true
     scale: true
     button:
       label: Get Started
     features:
-      - 10 GB Storage
-      - 10 Email Accounts
-      - 10 Domains
-      - 10 Websites
-      - 10 Databases
-      - 10 SSL Certificates
-      - 10 Support Tickets
+      - 50 GB Storage
+      - 50 Staff Accounts
+      - Full access to all features
   - title: Premium
-    description: A premium plan for large teams.
+    description: A premium plan for large veterinary practices and hospitals.
     price:
-      month: $29.9
-      year: $299.9
+      month: $200
+      year: $2000
     button:
       label: Get Started
       color: neutral
       variant: subtle
     features:
-      - 100 GB Storage
-      - 100 Email Accounts
-      - 100 Domains
-      - 100 Websites
-      - 100 Databases
-      - 100 SSL Certificates
-      - 100 Support Tickets
-logos:
-  title: Trusted by the world's best
-  icons:
-    - i-simple-icons-amazonaws
-    - i-simple-icons-heroku
-    - i-simple-icons-netlify
-    - i-simple-icons-vercel
-    - i-simple-icons-cloudflare
+      - 100+ GB Storage
+      - Unlimited Staff Accounts
+      - Full access to all features
 faq:
   title: Frequently asked questions
   description: Culpa consectetur dolor pariatur commodo aliqua amet tempor nisi enim deserunt elit cillum.

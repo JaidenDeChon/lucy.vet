@@ -1,22 +1,23 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
+const { data: page } = await useAsyncData("index", () =>
+	queryCollection("index").first(),
+);
 
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
+const title = page.value?.seo?.title || page.value?.title;
+const description = page.value?.seo?.description || page.value?.description;
 
 useSeoMeta({
-  titleTemplate: '',
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description
-})
+	titleTemplate: "",
+	title,
+	ogTitle: title,
+	description,
+	ogDescription: description,
+});
 </script>
 
 <template>
   <div v-if="page">
     <UPageHero
-      :title="page.title"
       :description="page.description"
       :links="page.hero.links"
     >
@@ -25,13 +26,93 @@ useSeoMeta({
       </template>
 
       <template #title>
-        <MDC
-          :value="page.title"
-          unwrap="p"
-        />
+        <Motion
+          :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: 0.1
+        }"
+        >
+          <MDC
+            :value="page.title"
+            unwrap="p"
+          />
+        </Motion>
       </template>
 
-      <PromotionalVideo />
+      <template #description>
+        <Motion
+          :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: 0.1
+        }"
+        >
+          <p>{{ page.description }}</p>
+        </Motion>
+      </template>
+
+      <template #links>
+        <Motion
+          v-for="(link, index) in page.hero.links"
+          :key="index"
+          :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: 0.3
+        }"
+        >
+          <UButton
+            v-bind="link"
+          />
+        </Motion>
+      </template>
+
+      <Motion
+        :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: 0.5
+        }"
+      >
+        <PromotionalVideo />
+      </Motion>
     </UPageHero>
 
     <UPageSection

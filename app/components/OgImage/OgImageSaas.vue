@@ -1,18 +1,18 @@
 <script setup lang="ts">
 defineOptions({
-  inheritAttrs: false
-})
+	inheritAttrs: false,
+});
 
 defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  }
-})
+	title: {
+		type: String,
+		required: true,
+	},
+	description: {
+		type: String,
+		required: true,
+	},
+});
 </script>
 
 <template>

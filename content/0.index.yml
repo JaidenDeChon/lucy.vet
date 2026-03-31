@@ -1,150 +1,153 @@
-title: Ship Your [SaaS]{class="text-primary"} at light speed
-description: Build production-ready SaaS applications with Nuxt UI's powerful components, authentication flows, and enterprise features. The same component library trusted by the entire Nuxt ecosystem.
+title: Level up your [VPMS]{class="text-primary"}.
+description: Schedule appointments, generate invoices, manage inventory, and more. Lucy VPMS is the Veterinary Practice Management System that streamlines your clinic operations in the cloud, on any device.
 seo:
-  title: Nuxt SaaS Template
-  description: Create stunning, fast and production-ready SaaS applications with Nuxt UI. 100+ Vue components, authentication, dark mode, and enterprise features built on Tailwind CSS.
+  title: Lucy VPMS
+  description: Schedule appointments, generate invoices, manage inventory, and more. Lucy VPMS is the Veterinary Practice Management System that streamlines your clinic operations in the cloud, on any device.
 navigation: false
 hero:
   links:
-    - label: Get started
+    - label: Get a demo
       icon: i-lucide-arrow-right
-      trailing: true
-      to: https://ui.nuxt.com/docs/getting-started/installation/nuxt
+      to: /get-started
       target: _blank
       size: xl
-    - label: Use this template
-      icon: i-simple-icons-github
+    - label: Sign up
+      icon: i-lucide-user-plus
       size: xl
       color: neutral
       variant: subtle
-      to: https://github.com/nuxt-ui-templates/saas
+      to: /get-started
       target: _blank
 sections:
-  - title: Powered by Nuxt UI Components
-    description: Access the complete Nuxt UI component library with 100+ beautifully styled, accessible, and customizable Vue components. Everything you need to build professional SaaS applications.
+  - title: Built for veterinary clinics
+    description: From solo practitioners to multi-location hospitals, Lucy VPMS scales with your practice and adapts to your unique workflows.
+    orientation: horizontal
+    features:
+      - name: Record keeping made easy
+        description: Store and access patient records, treatment history, and medical notes securely in the cloud.
+        icon: i-lucide-database
+      - name: Appointment scheduling
+        description: Intuitive calendar interface for booking appointments, managing availability, and sending automated reminders.
+        icon: i-lucide-calendar
+      - name: Streamlined billing
+        description: Generate invoices, process payments, and manage subscriptions with our integrated billing system.
+        icon: i-lucide-credit-card
+      - name: Inventory management
+        description: Track medications, supplies, and equipment with real-time inventory management and low stock alerts.
+        icon: i-lucide-box
+
+  - title: Designed for zero friction
+    reverse: true
+    description: Lucy VPMS was built with modern web technologies and best practices to ensure a seamless experience.
     id: features
     orientation: horizontal
     features:
-      - name: 100+ UI Components
-        description: From buttons to modals, data tables to forms - all styled with Tailwind CSS and accessible out of the box.
-        icon: i-lucide-package
-      - name: Authentication Ready
-        description: Pre-built login, signup, and password reset flows. Just connect your backend and start onboarding users.
-        icon: i-lucide-shield
-      - name: TypeScript First
-        description: Full TypeScript support with auto-completion, type safety, and IntelliSense for every component and composable.
-        icon: i-lucide-code-2
-  - title: Built for Modern SaaS
-    description: Everything you need to launch and scale your SaaS. From beautiful marketing pages to complex dashboards, ship faster with production-ready patterns.
-    orientation: horizontal
-    reverse: true
-    features:
-      - name: Edge Performance
-        description: Optimized for Core Web Vitals with automatic code splitting, lazy loading, and SSR/SSG support.
-        icon: i-lucide-zap
-      - name: Dark Mode Ready
-        description: Automatic theme switching with smooth transitions. Respects system preferences and remembers user choice.
-        icon: i-lucide-moon
-      - name: Global Ready
-        description: Built-in i18n support for 50+ languages with RTL/LTR layouts and @nuxt/fonts integration.
+      - name: Cloud-based convenience
+        description: Access your practice management system from anywhere, on any device, with secure cloud hosting.
+        icon: i-lucide-cloud
+      - name: User-friendly interface
+        description: Clean, intuitive design that minimizes training time and maximizes productivity for your staff.
+        icon: i-lucide-layout
+      - name: Built in the web
+        description: No software to install or maintain. Always up-to-date with the latest features and security patches.
         icon: i-lucide-globe
 features:
-  title: Everything You Need to Ship
-  description: Stop building from scratch. Focus on your unique features while Nuxt UI handles the foundations with battle-tested components and patterns.
+  title: Everything you need to run your practice
+  description: Stop overpaying for lesser tools. Lucy VPMS combines all the essential features you need to manage your veterinary practice in one powerful, easy-to-use platform.
   items:
-    - title: Beautiful Design System
-      description: Semantic color aliases, comprehensive design tokens, and Tailwind Variants for consistent, customizable styling.
-      icon: i-lucide-palette
-    - title: Accessible by Default
-      description: Built on Reka UI for robust accessibility. WCAG compliant components that work for everyone, everywhere.
-      icon: i-lucide-accessibility
-    - title: Developer Experience
-      description: Auto-imports, hot module replacement, and comprehensive documentation. Build faster with less friction.
-      icon: i-lucide-terminal
-    - title: SEO Optimized
-      description: Server-side rendering, automatic meta tags, sitemap generation, and Open Graph images out of the box.
-      icon: i-lucide-search
-    - title: Production Ready
-      description: Error handling, loading states, form validation, and security best practices built into every component.
-      icon: i-lucide-check-circle
-    - title: Infinitely Customizable
-      description: Override any style with the ui prop, customize globally with AppConfig, or use Tailwind classes directly.
-      icon: i-lucide-settings
+    - title: Patient Records
+      description: Securely store and access patient information, treatment history, and medical notes in the cloud.
+      icon: i-lucide-database
+    - title: Appointment Scheduling
+      description: Intuitive calendar interface for booking appointments, managing availability, and sending automated reminders.
+      icon: i-lucide-calendar
+    - title: Billing & Invoicing
+      description: Generate invoices, process payments, and manage subscriptions with our integrated billing system.
+      icon: i-lucide-credit-card
+    - title: Inventory Management
+      description: Track medications, supplies, and equipment with real-time inventory management and low stock alerts.
+      icon: i-lucide-box
+    - title: Cloud-based Access
+      description: Access your practice management system from anywhere, on any device, with secure cloud hosting.
+      icon: i-lucide-cloud
+    - title: User-friendly Interface
+      description: Clean, intuitive design that minimizes training time and maximizes productivity for your staff.
+      icon: i-lucide-layout
 testimonials:
-  headline: Trusted by Developers
-  title: Join Thousands Building with Nuxt UI
-  description: See why developers choose Nuxt UI to ship their SaaS applications faster and with more confidence.
+  headline: Trusted by veterinary clinics
+  title: Join our happy customers
+  description: See why veterinary practices choose Lucy VPMS to streamline their operations and provide better care for their patients.
   items:
-    - quote: Nuxt UI transformed how we build. The component quality is exceptional - everything just works with perfect TypeScript support, accessibility, and dark mode built in.
+    - quote: Lucy VPMS transformed our practice. Our previous system was clunky and outdated, but Lucy made things so much easier.
       user:
         name: Sarah Chen
-        description: CTO at TechScale Solutions
+        description: Owner of Happy Paws Veterinary Clinic
         avatar:
           src: https://i.pravatar.cc/120?img=1
-    - quote: We shipped our MVP in 2 weeks instead of 2 months. The authentication flows and form components saved us countless hours of development time.
+    - quote: We had an influx of spay and neuter appointments and Lucy's scheduling system handled it flawlessly. Our staff loves how intuitive it is.
       user:
         name: Marcus Rodriguez
-        description: VP of Engineering at DataFlow
+        description: Practice Manager at City Vet Hospital
         avatar:
           src: https://i.pravatar.cc/120?img=7
-    - quote: The design system with AppConfig is brilliant. We maintain brand consistency across all our products while leveraging the full component library.
+    - quote: The billing system is a game-changer. We can generate invoices and process payments in seconds, which has improved our cash flow significantly.
       user:
         name: David Kumar
-        description: Security Director at SecureStack
+        description: CFO at Greenfield Animal Clinic
         avatar:
           src: https://i.pravatar.cc/120?img=3
-    - quote: Perfect Lighthouse scores out of the box. Our Core Web Vitals improved dramatically just by switching to Nuxt UI components.
+    - quote: The inventory management features have saved us so much time. We always know what we have in stock and when to reorder. It's saved our butts more than once!
       user:
         name: Emily Zhang
-        description: Lead Architect at ScaleForce
+        description: Office Manager at Lakeside Veterinary Center
         avatar:
           src: https://i.pravatar.cc/120?img=5
-    - quote: The Tailwind Variants system makes customization so intuitive. We can override any component style while keeping the functionality intact.
+    - quote: The cloud-based access means I can check clinic records and manage appointments from home or on the go. It's been a lifesaver for our busy practice.
       user:
         name: James Wilson
-        description: DevOps Lead at CloudPro
+        description: Veterinarian at Baytowne Animal Hospital
         avatar:
           src: https://i.pravatar.cc/120?img=8
-    - quote: From the SaaS template to production in days. The pre-built layouts, navigation, and content structure accelerated our launch.
+    - quote: The user interface is so clean and intuitive. Our staff picked it up in no time, and it's made our daily operations much smoother.
       user:
         name: Lisa Patel
-        description: CEO at AutoScale
+        description: Clinic Director at Riverbend Veterinary Clinic
         avatar:
           src: https://i.pravatar.cc/120?img=9
-    - quote: Reka UI foundation means accessibility is never an afterthought. We achieved WCAG compliance without any custom work.
+    - quote: Support team has been fantastic. Any questions or help we needed, they were quick to respond and resolve our issues.
       user:
         name: Michael Torres
-        description: Frontend Lead at AccessFirst
+        description: IT Specialist at Woodland Veterinary Hospital
         avatar:
           src: https://i.pravatar.cc/120?img=11
-    - quote: The documentation is outstanding. Every component has clear examples, and the community on Discord is incredibly helpful.
+    - quote: I love being able to sign in from my tablet during rounds and access patient records on the spot. It's made my job so much easier.
       user:
-        name: Rachel Kim
-        description: Performance Engineer at APIHub
+        name: Hans Kim
+        description: Vet Tech at Baytowne Animal Hospital
         avatar:
           src: https://i.pravatar.cc/120?img=10
-    - quote: We replaced three different UI libraries with Nuxt UI. The consistency and quality across all components is unmatched.
+    - quote: The looks alone sold me on Lucy VPMS, but the functionality has exceeded all my expectations. It's the best practice management system I've ever used.
       user:
         name: Thomas Weber
-        description: UI Architecture Lead at DesignScale
+        description: Veterinarian at Greenfield Animal Clinic
         avatar:
           src: https://i.pravatar.cc/120?img=12
-    - quote: The integration with Nuxt modules is seamless. Color mode, fonts, icons - everything works together perfectly.
+    - quote: The transition to Lucy VPMS was seamless. The support team helped us every step of the way, and now we can't imagine going back to our old system.
       user:
         name: Sophia Martinez
-        description: Integration Specialist at TechFlow
+        description: Practice Manager at Lakeside Veterinary Center
         avatar:
           src: https://i.pravatar.cc/120?img=14
 cta:
-  title: Ready to build an amazing SaaS?
-  description: Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today.
+  title: Ready for an amazing VPMS?
+  description: Sign up for a demo today and see how Lucy VPMS can transform your veterinary practice. 
   links:
-    - label: Start building
-      to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt'
+    - label: Get a demo
+      to: '/get-started'
       target: _blank
       trailingIcon: i-lucide-arrow-right
-    - label: View on GitHub
-      to: 'https://github.com/nuxt-ui-templates/saas'
+    - label: Sign up
+      to: '/sign-up'
       target: _blank
       variant: subtle
-      icon: i-simple-icons-github
+      icon: i-lucide-user-plus
