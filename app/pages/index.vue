@@ -108,10 +108,10 @@ useSeoMeta({
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.5
+          delay: 0.3
         }"
       >
-        <PromotionalVideo />
+        <ImagePlaceholder />
       </Motion>
     </UPageHero>
 
@@ -124,8 +124,8 @@ useSeoMeta({
       :reverse="section.reverse"
       :features="section.features"
     >
-      <ImagePlaceholder />
-    </UPageSection>
+        <ImagePlaceholder />
+      </UPageSection>
 
     <UPageSection
       :title="page.features.title"
