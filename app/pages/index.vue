@@ -91,7 +91,7 @@ useSeoMeta({
         }"
         >
           <UBadge color="primary" variant="subtle" size="md">
-            Now in Pre-Alpha
+            {{ (page as unknown as { hero?: { badge?: { label?: string } } }).hero?.badge?.label }}
           </UBadge>
         </Motion>
       </template>
@@ -142,7 +142,7 @@ useSeoMeta({
       </Motion>
     </UPageHero>
 
-    <UPageSection title="Watch the demo" id="watch-the-demo">
+    <UPageSection :title="(page as unknown as { demo?: { title?: string } }).demo?.title" id="watch-the-demo">
       <ImagePlaceholder />
     </UPageSection>
 

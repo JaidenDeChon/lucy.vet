@@ -5,6 +5,8 @@ seo:
   description: Schedule appointments, generate invoices, manage inventory, and more. Lucy VPMS is the Veterinary Practice Management System that streamlines your clinic operations in the cloud, on any device.
 navigation: false
 hero:
+  badge:
+    label: Now in Pre-Alpha
   links:
     - label: Watch the demo
       icon: i-lucide-arrow-down
@@ -49,6 +51,9 @@ sections:
       - name: Built in the web
         description: No software to install or maintain. Always up-to-date with the latest features and security patches.
         icon: i-lucide-globe
+
+demo:
+  title: Watch the demo
 features:
   title: Everything you need to run your practice
   description: Stop overpaying for lesser tools. Lucy VPMS combines all the essential features you need to manage your veterinary practice in one powerful, easy-to-use platform.
