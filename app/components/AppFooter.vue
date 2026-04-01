@@ -12,9 +12,6 @@ const columns = [
 			{
 				label: "Roadmap",
 			},
-			{
-				label: "Changelog",
-			},
 		],
 	},
 	{
@@ -45,9 +42,6 @@ const columns = [
 			},
 			{
 				label: "Careers",
-			},
-			{
-				label: "Blog",
 			},
 		],
 	},

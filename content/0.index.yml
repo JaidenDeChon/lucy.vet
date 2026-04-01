@@ -6,8 +6,8 @@ seo:
 navigation: false
 hero:
   links:
-    - label: Get a demo
-      icon: i-lucide-arrow-right
+    - label: Watch the demo
+      icon: i-lucide-arrow-down
       to: /get-started
       target: _blank
       size: xl

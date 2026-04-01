@@ -11,17 +11,9 @@ const items = computed(() => [
 		to: "/pricing",
 	},
 	{
-		label: "Blog",
-		to: "/blog",
-	},
-	{
 		label: "Docs",
 		to: "/docs",
 		active: route.path.startsWith("/docs"),
-	},
-	{
-		label: "Changelog",
-		to: "/changelog",
 	},
 ]);
 </script>

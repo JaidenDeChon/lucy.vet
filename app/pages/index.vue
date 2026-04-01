@@ -3,6 +3,8 @@ const { data: page } = await useAsyncData("index", () =>
 	queryCollection("index").first(),
 );
 
+const isVerticalLayout = useMediaQuery("(max-width: 1023px)");
+
 const title = page.value?.seo?.title || page.value?.title;
 const description = page.value?.seo?.description || page.value?.description;
 
@@ -18,8 +20,9 @@ useSeoMeta({
 <template>
   <div v-if="page">
     <UPageHero
-      :description="page.description"
       :links="page.hero.links"
+      orientation="horizontal""
+      :ui="{ headline: '-mt-34' }"
     >
       <template #top>
         <HeroBackground />
@@ -39,7 +42,7 @@ useSeoMeta({
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.1
+          delay: isVerticalLayout ? 0.3 : 0.2
         }"
         >
           <MDC
@@ -63,10 +66,33 @@ useSeoMeta({
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.1
+          delay: isVerticalLayout ? 0.3 : 0.2
         }"
         >
           <p>{{ page.description }}</p>
+        </Motion>
+      </template>
+
+      <template #headline>
+        <Motion
+          :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: isVerticalLayout ? 0.2 : 0.1
+        }"
+        >
+          <UBadge color="primary" variant="subtle" size="md">
+            Now in Pre-Alpha
+          </UBadge>
         </Motion>
       </template>
 
@@ -86,7 +112,7 @@ useSeoMeta({
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.3
+          delay: 0.4
         }"
         >
           <UButton
@@ -96,6 +122,7 @@ useSeoMeta({
       </template>
 
       <Motion
+        class="order-first lg:order-last mt-"
         :initial="{
           scale: 1.1,
           opacity: 0,
@@ -108,12 +135,16 @@ useSeoMeta({
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.3
+          delay: isVerticalLayout ? 0.1 : 0.4
         }"
       >
-        <ImagePlaceholder />
+        <NuxtPicture src="lucy.png" format="webp" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-24' }" />
       </Motion>
     </UPageHero>
+
+    <UPageSection title="Watch the demo">
+      <ImagePlaceholder />
+    </UPageSection>
 
     <UPageSection
       v-for="(section, index) in page.sections"
