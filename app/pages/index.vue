@@ -4,6 +4,17 @@ const { data: page } = await useAsyncData("index", () =>
 );
 
 const isVerticalLayout = useMediaQuery("(max-width: 1023px)");
+type IndexPageContentExtras = {
+  hero?: { badge?: { label?: string } };
+  demo?: { title?: string };
+};
+
+const heroBadgeLabel = computed(
+  () => ((page.value as unknown as IndexPageContentExtras | null)?.hero?.badge?.label ?? "").trim(),
+);
+const demoSectionTitle = computed(
+  () => ((page.value as unknown as IndexPageContentExtras | null)?.demo?.title ?? "Watch the demo").trim(),
+);
 
 const title = page.value?.seo?.title || page.value?.title;
 const description = page.value?.seo?.description || page.value?.description;
@@ -21,7 +32,7 @@ useSeoMeta({
   <div v-if="page">
     <UPageHero
       :links="page.hero.links"
-      orientation="horizontal""
+      orientation="horizontal"
       :ui="{ headline: '-mt-34' }"
     >
       <template #top>
@@ -91,7 +102,7 @@ useSeoMeta({
         }"
         >
           <UBadge color="primary" variant="subtle" size="md">
-            {{ (page as unknown as { hero?: { badge?: { label?: string } } }).hero?.badge?.label }}
+            {{ heroBadgeLabel }}
           </UBadge>
         </Motion>
       </template>
@@ -142,7 +153,7 @@ useSeoMeta({
       </Motion>
     </UPageHero>
 
-    <UPageSection :title="(page as unknown as { demo?: { title?: string } }).demo?.title" id="watch-the-demo">
+    <UPageSection :title="demoSectionTitle" id="watch-the-demo">
       <ImagePlaceholder />
     </UPageSection>
 
