@@ -5,15 +5,21 @@ const { data: page } = await useAsyncData("index", () =>
 
 const isVerticalLayout = useMediaQuery("(max-width: 1023px)");
 type IndexPageContentExtras = {
-  hero?: { badge?: { label?: string } };
-  demo?: { title?: string };
+	hero?: { badge?: { label?: string } };
+	demo?: { title?: string };
 };
 
-const heroBadgeLabel = computed(
-  () => ((page.value as unknown as IndexPageContentExtras | null)?.hero?.badge?.label ?? "").trim(),
+const heroBadgeLabel = computed(() =>
+	(
+		(page.value as unknown as IndexPageContentExtras | null)?.hero?.badge
+			?.label ?? ""
+	).trim(),
 );
-const demoSectionTitle = computed(
-  () => ((page.value as unknown as IndexPageContentExtras | null)?.demo?.title ?? "Watch the demo").trim(),
+const demoSectionTitle = computed(() =>
+	(
+		(page.value as unknown as IndexPageContentExtras | null)?.demo?.title ??
+		"Watch the demo"
+	).trim(),
 );
 
 const title = page.value?.seo?.title || page.value?.title;
