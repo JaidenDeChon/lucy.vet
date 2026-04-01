@@ -3,6 +3,10 @@ const route = useRoute();
 
 const items = computed(() => [
 	{
+		label: "Home",
+		to: "/",
+	},
+	{
 		label: "Features",
 		to: "/features",
 	},

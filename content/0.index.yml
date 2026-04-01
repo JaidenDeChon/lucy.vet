@@ -138,7 +138,7 @@ testimonials:
           src: https://i.pravatar.cc/120?img=14
 cta:
   title: Ready for an amazing VPMS?
-  description: Sign up for a demo today and see how Lucy VPMS can transform your veterinary practice. 
+  description: Watch the demo today and see how Lucy VPMS can transform your veterinary practice. 
   links:
     - label: Watch the demo
       to: '/get-started'

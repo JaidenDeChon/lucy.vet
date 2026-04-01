@@ -4,13 +4,7 @@ const columns = [
 		label: "Resources",
 		children: [
 			{
-				label: "Help center",
-			},
-			{
 				label: "Docs",
-			},
-			{
-				label: "Roadmap",
 			},
 		],
 	},
@@ -18,16 +12,16 @@ const columns = [
 		label: "Features",
 		children: [
 			{
-				label: "Affiliates",
+				label: "Calendar",
 			},
 			{
-				label: "Portal",
+				label: "Record keeping",
 			},
 			{
-				label: "Jobs",
+				label: "Inventory",
 			},
 			{
-				label: "Sponsors",
+				label: "Customer portal",
 			},
 		],
 	},
@@ -39,6 +33,7 @@ const columns = [
 			},
 			{
 				label: "Pricing",
+				to: "/pricing",
 			},
 			{
 				label: "Careers",
@@ -63,12 +58,11 @@ function onSubmit() {
 </script>
 
 <template>
-  <USeparator
-    icon="i-simple-icons-nuxtdotjs"
-    class="h-px"
-  />
+  <USeparator class="h-px">
+    <NuxtPicture src="app-logo.svg" :width="180" />
+  </USeparator>
 
-  <UFooter :ui="{ top: 'border-b border-default' }">
+  <UFooter :ui="{ top: 'border-b border-default mt-8' }">
     <template #top>
       <UContainer>
         <UFooterColumns :columns="columns">
