@@ -138,11 +138,11 @@ useSeoMeta({
           delay: isVerticalLayout ? 0.1 : 0.4
         }"
       >
-        <NuxtPicture src="lucy.png" format="webp" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-24' }" />
+        <NuxtPicture src="lucy.png" format="webp" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }" />
       </Motion>
     </UPageHero>
 
-    <UPageSection title="Watch the demo">
+    <UPageSection title="Watch the demo" id="watch-the-demo">
       <ImagePlaceholder />
     </UPageSection>
 

@@ -21,10 +21,10 @@ const items = computed(() => [
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
-        <AppLogo class="w-auto h-6 shrink-0" />
+      <NuxtLink to="/" class="flex items-center gap-2">
+        <AppLogo class="w-9 h-9" />
+        <p class="text-xl text-primary font-extrabold">Lucy<span class="text-default font-normal">VPMS</span></p>
       </NuxtLink>
-      <TemplateMenu />
     </template>
 
     <UNavigationMenu

@@ -8,16 +8,14 @@ hero:
   links:
     - label: Watch the demo
       icon: i-lucide-arrow-down
-      to: /get-started
-      target: _blank
+      to: "#watch-the-demo"
       size: xl
     - label: Sign up
       icon: i-lucide-user-plus
       size: xl
-      color: neutral
+      color: primary
       variant: subtle
       to: /get-started
-      target: _blank
 sections:
   - title: Built for veterinary clinics
     description: From solo practitioners to multi-location hospitals, Lucy VPMS scales with your practice and adapts to your unique workflows.
@@ -142,10 +140,10 @@ cta:
   title: Ready for an amazing VPMS?
   description: Sign up for a demo today and see how Lucy VPMS can transform your veterinary practice. 
   links:
-    - label: Get a demo
+    - label: Watch the demo
       to: '/get-started'
       target: _blank
-      trailingIcon: i-lucide-arrow-right
+      trailingIcon: i-lucide-arrow-up
     - label: Sign up
       to: '/sign-up'
       target: _blank

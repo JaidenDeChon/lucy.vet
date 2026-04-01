@@ -19,6 +19,10 @@
 	--color-green-950: #052e16;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .dark {
 	--ui-bg: var(--ui-color-neutral-950);
 	--ui-bg-muted: var(--ui-color-neutral-900);
