@@ -40,7 +40,7 @@ useSeoMeta({
       :links="page.hero.links"
       orientation="horizontal"
       :ui="{ headline: '-mt-34' }"
-      class="min-h-screen"
+
     >
       <template #top>
         <HeroBackground />
