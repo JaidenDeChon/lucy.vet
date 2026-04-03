@@ -40,6 +40,7 @@ useSeoMeta({
       :links="page.hero.links"
       orientation="horizontal"
       :ui="{ headline: '-mt-34' }"
+      class="min-h-screen"
     >
       <template #top>
         <HeroBackground />
@@ -155,7 +156,7 @@ useSeoMeta({
           delay: isVerticalLayout ? 0.1 : 0.4
         }"
       >
-        <NuxtPicture src="lucy.png" format="webp" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }" />
+        <NuxtPicture src="lucy.png" format="webp" width="1495" height="1576" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }" />
       </Motion>
     </UPageHero>
 
