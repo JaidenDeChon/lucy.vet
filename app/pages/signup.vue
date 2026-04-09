@@ -1,66 +1,66 @@
 <script setup lang="ts">
-import * as z from "zod";
-import type { FormSubmitEvent } from "@nuxt/ui";
+import * as z from 'zod'
+import type { FormSubmitEvent } from '@nuxt/ui'
 
 definePageMeta({
-	layout: "auth",
-});
+  layout: 'auth'
+})
 
 useSeoMeta({
-	title: "Sign up",
-	description: "Create an account to get started",
-});
+  title: 'Sign up',
+  description: 'Create an account to get started'
+})
 
-const toast = useToast();
+const toast = useToast()
 
 const fields = [
-	{
-		name: "name",
-		type: "text" as const,
-		label: "Name",
-		placeholder: "Enter your name",
-	},
-	{
-		name: "email",
-		type: "text" as const,
-		label: "Email",
-		placeholder: "Enter your email",
-	},
-	{
-		name: "password",
-		label: "Password",
-		type: "password" as const,
-		placeholder: "Enter your password",
-	},
-];
+  {
+    name: 'name',
+    type: 'text' as const,
+    label: 'Name',
+    placeholder: 'Enter your name'
+  },
+  {
+    name: 'email',
+    type: 'text' as const,
+    label: 'Email',
+    placeholder: 'Enter your email'
+  },
+  {
+    name: 'password',
+    label: 'Password',
+    type: 'password' as const,
+    placeholder: 'Enter your password'
+  }
+]
 
 const providers = [
-	{
-		label: "Google",
-		icon: "i-simple-icons-google",
-		onClick: () => {
-			toast.add({ title: "Google", description: "Login with Google" });
-		},
-	},
-	{
-		label: "GitHub",
-		icon: "i-simple-icons-github",
-		onClick: () => {
-			toast.add({ title: "GitHub", description: "Login with GitHub" });
-		},
-	},
-];
+  {
+    label: 'Google',
+    icon: 'i-simple-icons-google',
+    onClick: () => {
+      toast.add({ title: 'Google', description: 'Login with Google' })
+    }
+  },
+  {
+    label: 'GitHub',
+    icon: 'i-simple-icons-github',
+    onClick: () => {
+      toast.add({ title: 'GitHub', description: 'Login with GitHub' })
+    }
+  }
+]
 
 const schema = z.object({
-	name: z.string().min(1, "Name is required"),
-	email: z.email("Invalid email"),
-	password: z.string().min(8, "Must be at least 8 characters"),
-});
+  name: z.string().min(1, 'Name is required'),
+  email: z.email('Invalid email'),
+  password: z.string().min(8, 'Must be at least 8 characters')
+})
 
-type Schema = z.output<typeof schema>;
+type Schema = z.output<typeof schema>
 
 function onSubmit(payload: FormSubmitEvent<Schema>) {
-	console.log("Submitted", payload);
+  console.log('Submitted', payload)
 }
 </script>
 

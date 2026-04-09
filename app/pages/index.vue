@@ -1,37 +1,37 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData("index", () =>
-	queryCollection("index").first(),
-);
+const { data: page } = await useAsyncData('index', () =>
+  queryCollection('index').first()
+)
 
-const isVerticalLayout = useMediaQuery("(max-width: 1023px)");
+const isVerticalLayout = useMediaQuery('(max-width: 1023px)')
 type IndexPageContentExtras = {
-	hero?: { badge?: { label?: string } };
-	demo?: { title?: string };
-};
+  hero?: { badge?: { label?: string } }
+  demo?: { title?: string }
+}
 
 const heroBadgeLabel = computed(() =>
-	(
-		(page.value as unknown as IndexPageContentExtras | null)?.hero?.badge
-			?.label ?? ""
-	).trim(),
-);
+  (
+    (page.value as unknown as IndexPageContentExtras | null)?.hero?.badge
+      ?.label ?? ''
+  ).trim()
+)
 const demoSectionTitle = computed(() =>
-	(
-		(page.value as unknown as IndexPageContentExtras | null)?.demo?.title ??
-		"Watch the demo"
-	).trim(),
-);
+  (
+    (page.value as unknown as IndexPageContentExtras | null)?.demo?.title
+    ?? 'Watch the demo'
+  ).trim()
+)
 
-const title = page.value?.seo?.title || page.value?.title;
-const description = page.value?.seo?.description || page.value?.description;
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
 
 useSeoMeta({
-	titleTemplate: "",
-	title,
-	ogTitle: title,
-	description,
-	ogDescription: description,
-});
+  titleTemplate: '',
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
+})
 </script>
 
 <template>
@@ -48,19 +48,19 @@ useSeoMeta({
       <template #title>
         <Motion
           :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: isVerticalLayout ? 0.3 : 0.2
-        }"
+            scale: 1.1,
+            opacity: 0,
+            filter: 'blur(20px)'
+          }"
+          :animate="{
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)'
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: isVerticalLayout ? 0.3 : 0.2
+          }"
         >
           <MDC
             :value="page.title"
@@ -72,19 +72,19 @@ useSeoMeta({
       <template #description>
         <Motion
           :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: isVerticalLayout ? 0.3 : 0.2
-        }"
+            scale: 1.1,
+            opacity: 0,
+            filter: 'blur(20px)'
+          }"
+          :animate="{
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)'
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: isVerticalLayout ? 0.3 : 0.2
+          }"
         >
           <p>{{ page.description }}</p>
         </Motion>
@@ -93,21 +93,25 @@ useSeoMeta({
       <template #headline>
         <Motion
           :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: isVerticalLayout ? 0.2 : 0.1
-        }"
+            scale: 1.1,
+            opacity: 0,
+            filter: 'blur(20px)'
+          }"
+          :animate="{
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)'
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: isVerticalLayout ? 0.2 : 0.1
+          }"
         >
-          <UBadge color="primary" variant="subtle" size="md">
+          <UBadge
+            color="primary"
+            variant="subtle"
+            size="md"
+          >
             {{ heroBadgeLabel }}
           </UBadge>
         </Motion>
@@ -118,19 +122,19 @@ useSeoMeta({
           v-for="(link, index) in page.hero.links"
           :key="index"
           :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.4
-        }"
+            scale: 1.1,
+            opacity: 0,
+            filter: 'blur(20px)'
+          }"
+          :animate="{
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)'
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: 0.4
+          }"
         >
           <UButton
             v-bind="link"
@@ -155,11 +159,18 @@ useSeoMeta({
           delay: isVerticalLayout ? 0.1 : 0.4
         }"
       >
-        <NuxtPicture src="lucy.png" format="webp" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }" />
+        <NuxtPicture
+          src="lucy.png"
+          format="webp"
+          :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }"
+        />
       </Motion>
     </UPageHero>
 
-    <UPageSection :title="demoSectionTitle" id="watch-the-demo">
+    <UPageSection
+      id="watch-the-demo"
+      :title="demoSectionTitle"
+    >
       <ImagePlaceholder />
     </UPageSection>
 
@@ -172,8 +183,8 @@ useSeoMeta({
       :reverse="section.reverse"
       :features="section.features"
     >
-        <ImagePlaceholder />
-      </UPageSection>
+      <ImagePlaceholder />
+    </UPageSection>
 
     <UPageSection
       :title="page.features.title"

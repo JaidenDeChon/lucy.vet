@@ -1,48 +1,48 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: [
-		"@nuxt/eslint",
-		"@nuxt/image",
-		"@nuxt/ui",
-		"@nuxt/content",
-		"@vueuse/nuxt",
-		"nuxt-og-image",
-		"motion-v/nuxt",
-	],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@vueuse/nuxt',
+    'nuxt-og-image',
+    'motion-v/nuxt'
+  ],
 
-	devtools: {
-		enabled: true,
-	},
+  devtools: {
+    enabled: true
+  },
 
-	css: ["~/assets/css/main.css"],
+  css: ['~/assets/css/main.css'],
 
-	routeRules: {
-		"/docs": { redirect: "/docs/getting-started", prerender: false },
-	},
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  },
 
-	compatibilityDate: "2024-07-11",
+  routeRules: {
+    '/docs': { redirect: '/docs/getting-started', prerender: false }
+  },
 
-	nitro: {
-		prerender: {
-			routes: ["/"],
-			crawlLinks: true,
-		},
-	},
+  compatibilityDate: '2024-07-11',
 
-	eslint: {
-		config: {
-			stylistic: {
-				commaDangle: "never",
-				braceStyle: "1tbs",
-			},
-		},
-	},
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
+  },
 
-	content: {
-		experimental: {
-			sqliteConnector: "native",
-		},
-	},
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
 
-	image: {}
-});
+  image: {}
+})

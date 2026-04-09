@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData("features", () =>
-	queryCollection("features").first(),
-);
+const { data: page } = await useAsyncData('features', () =>
+  queryCollection('features').first()
+)
 
-const title = page.value?.seo?.title || page.value?.title;
-const description = page.value?.seo?.description || page.value?.description;
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
 
 useSeoMeta({
-	title,
-	ogTitle: title,
-	description,
-	ogDescription: description,
-});
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
+})
 </script>
 
 <template>
