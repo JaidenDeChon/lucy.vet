@@ -16,15 +16,15 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  colorMode: {
+    preference: 'system'
+  },
+
   content: {
     experimental: {
       sqliteConnector: 'native'
     }
   },
-
-	colorMode: {
-		preference: "system",
-	},
 
   compatibilityDate: '2024-07-11',
 

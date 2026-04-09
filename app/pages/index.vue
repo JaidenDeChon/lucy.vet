@@ -1,37 +1,37 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData("index", () =>
-	queryCollection("index").first(),
-);
+const { data: page } = await useAsyncData('index', () =>
+  queryCollection('index').first()
+)
 
-const isVerticalLayout = useMediaQuery("(max-width: 1023px)");
+const isVerticalLayout = useMediaQuery('(max-width: 1023px)')
 type IndexPageContentExtras = {
-	hero?: { badge?: { label?: string } };
-	demo?: { title?: string };
-};
+  hero?: { badge?: { label?: string } }
+  demo?: { title?: string }
+}
 
 const heroBadgeLabel = computed(() =>
-	(
-		(page.value as unknown as IndexPageContentExtras | null)?.hero?.badge
-			?.label ?? ""
-	).trim(),
-);
+  (
+    (page.value as unknown as IndexPageContentExtras | null)?.hero?.badge
+      ?.label ?? ''
+  ).trim()
+)
 const demoSectionTitle = computed(() =>
-	(
-		(page.value as unknown as IndexPageContentExtras | null)?.demo?.title ??
-		"Watch the demo"
-	).trim(),
-);
+  (
+    (page.value as unknown as IndexPageContentExtras | null)?.demo?.title
+    ?? 'Watch the demo'
+  ).trim()
+)
 
-const title = page.value?.seo?.title || page.value?.title;
-const description = page.value?.seo?.description || page.value?.description;
+const title = page.value?.seo?.title || page.value?.title
+const description = page.value?.seo?.description || page.value?.description
 
 useSeoMeta({
-	titleTemplate: "",
-	title,
-	ogTitle: title,
-	description,
-	ogDescription: description,
-});
+  titleTemplate: '',
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
+})
 </script>
 
 <template>
@@ -40,7 +40,6 @@ useSeoMeta({
       :links="page.hero.links"
       orientation="horizontal"
       :ui="{ headline: '-mt-34' }"
-
     >
       <template #top>
         <HeroBackground />
@@ -160,7 +159,13 @@ useSeoMeta({
           delay: isVerticalLayout ? 0.1 : 0.4
         }"
       >
-        <NuxtPicture src="lucy.png" format="webp" width="1495" height="1576" :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }" />
+        <NuxtPicture
+          src="lucy.png"
+          format="webp"
+          width="1495"
+          height="1576"
+          :img-attrs="{ class: '-mt-12 mx-auto max-w-xs w-full lg:max-w-lg lg:-mt-16' }"
+        />
       </Motion>
     </UPageHero>
 
