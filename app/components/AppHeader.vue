@@ -71,15 +71,8 @@ const items = computed(() => [
       <UButton
         label="Sign in"
         color="neutral"
-        variant="subtle"
-        to="/login"
-        block
-        class="mb-3"
-      />
-      <UButton
-        label="Sign up"
-        color="neutral"
-        to="/signup"
+        variant="outline"
+        to="https://app.lucy.vet"
         block
       />
     </template>
