@@ -1,62 +1,65 @@
 <script setup lang="ts">
 const columns = [
-	{
-		label: "Resources",
-		children: [
-			{
-				label: "Docs",
-			},
-		],
-	},
-	{
-		label: "Features",
-		children: [
-			{
-				label: "Calendar",
-			},
-			{
-				label: "Record keeping",
-			},
-			{
-				label: "Inventory",
-			},
-			{
-				label: "Customer portal",
-			},
-		],
-	},
-	{
-		label: "Company",
-		children: [
-			{
-				label: "About",
-			},
-			{
-				label: "Pricing",
-				to: "/pricing",
-			},
-		],
-	},
-];
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Docs'
+      }
+    ]
+  },
+  {
+    label: 'Features',
+    children: [
+      {
+        label: 'Calendar'
+      },
+      {
+        label: 'Record keeping'
+      },
+      {
+        label: 'Inventory'
+      },
+      {
+        label: 'Customer portal'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About'
+      },
+      {
+        label: 'Pricing',
+        to: '/pricing'
+      }
+    ]
+  }
+]
 
-const toast = useToast();
+const toast = useToast()
 
-const email = ref("");
-const loading = ref(false);
+const email = ref('')
+const loading = ref(false)
 
 function onSubmit() {
-	loading.value = true;
+  loading.value = true
 
-	toast.add({
-		title: "Subscribed!",
-		description: "You've been subscribed to our newsletter.",
-	});
+  toast.add({
+    title: 'Subscribed!',
+    description: "You've been subscribed to our newsletter."
+  })
 }
 </script>
 
 <template>
   <USeparator class="h-px">
-    <NuxtPicture src="app-logo.svg" :width="140" />
+    <NuxtPicture
+      src="app-logo.svg"
+      :width="140"
+    />
   </USeparator>
 
   <UFooter :ui="{ top: 'border-b border-default mt-8' }">

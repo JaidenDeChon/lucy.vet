@@ -1,31 +1,34 @@
 <script setup lang="ts">
-const route = useRoute();
+const route = useRoute()
 
 const items = computed(() => [
-	{
-		label: "Home",
-		to: "/",
-	},
-	{
-		label: "Features",
-		to: "/features",
-	},
-	{
-		label: "Pricing",
-		to: "/pricing",
-	},
-	{
-		label: "Docs",
-		to: "/docs",
-		active: route.path.startsWith("/docs"),
-	},
-]);
+  {
+    label: 'Home',
+    to: '/'
+  },
+  {
+    label: 'Features',
+    to: '/features'
+  },
+  {
+    label: 'Pricing',
+    to: '/pricing'
+  },
+  {
+    label: 'Docs',
+    to: '/docs',
+    active: route.path.startsWith('/docs')
+  }
+])
 </script>
 
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/" class="flex items-center gap-2">
+      <NuxtLink
+        to="/"
+        class="flex items-center gap-2"
+      >
         <AppLogo class="w-9 h-9" />
         <p class="text-xl text-primary font-extrabold">Lucy<span class="text-default font-normal">VPMS</span></p>
       </NuxtLink>

@@ -5,5 +5,5 @@
     width="36"
     height="36"
     class="block object-contain"
-  />
+  >
 </template>
