@@ -17,8 +17,8 @@ const heroBadgeLabel = computed(() =>
 )
 const demoSectionTitle = computed(() =>
   (
-    (page.value as unknown as IndexPageContentExtras | null)?.demo?.title
-    ?? 'Watch the demo'
+    (page.value as unknown as IndexPageContentExtras | null)?.demo?.title ??
+    'Watch the demo'
   ).trim()
 )
 

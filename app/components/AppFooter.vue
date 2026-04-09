@@ -49,7 +49,7 @@ function onSubmit() {
 
   toast.add({
     title: 'Subscribed!',
-    description: 'You\'ve been subscribed to our newsletter.'
+    description: "You've been subscribed to our newsletter."
   })
 }
 </script>

@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
-const color = computed(() =>
-  colorMode.value === 'dark' ? '#020618' : 'white'
-)
+const color = computed(() => (colorMode.value === 'dark' ? '#020618' : 'white'))
 
 useHead({
   meta: [
@@ -28,8 +26,8 @@ const { data: navigation } = await useAsyncData(
   'navigation',
   () => queryCollectionNavigation('docs'),
   {
-    transform: data =>
-      data.find(item => item.path === '/docs')?.children || []
+    transform: (data) =>
+      data.find((item) => item.path === '/docs')?.children || []
   }
 )
 const { data: files } = useLazyAsyncData(

@@ -23,8 +23,8 @@ const { data: navigation } = await useAsyncData(
   'navigation',
   () => queryCollectionNavigation('docs'),
   {
-    transform: data =>
-      data.find(item => item.path === '/docs')?.children || []
+    transform: (data) =>
+      data.find((item) => item.path === '/docs')?.children || []
   }
 )
 const { data: files } = useLazyAsyncData(
