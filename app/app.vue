@@ -19,8 +19,8 @@ useHead({
 
 useSeoMeta({
 	titleTemplate: "%s - Lucy VPMS",
-	ogImage: "https://ui.nuxt.com/assets/templates/nuxt/saas-light.png",
-	twitterImage: "https://ui.nuxt.com/assets/templates/nuxt/saas-light.png",
+	ogImage: "/social-thumbnail.png",
+	twitterImage: "/social-thumbnail.png",
 	twitterCard: "summary_large_image",
 });
 
