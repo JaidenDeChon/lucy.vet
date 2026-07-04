@@ -22,6 +22,9 @@ sections:
   - title: Built for veterinary clinics
     description: From solo practitioners to multi-location hospitals, Lucy VPMS scales with your practice and adapts to your unique workflows.
     orientation: horizontal
+    image:
+      src: /dashboard.png
+      alt: Lucy VPMS clinic dashboard showing upcoming appointments and clinic alerts
     features:
       - name: Record keeping made easy
         description: Store and access patient records, treatment history, and medical notes securely in the cloud.
@@ -41,6 +44,9 @@ sections:
     description: Lucy VPMS was built with modern web technologies and best practices to ensure a seamless experience.
     id: features
     orientation: horizontal
+    image:
+      src: /patient.png
+      alt: Lucy VPMS patient record with pets, billing ledger, and payment methods
     features:
       - name: Cloud-based convenience
         description: Access your practice management system from anywhere, on any device, with secure cloud hosting.

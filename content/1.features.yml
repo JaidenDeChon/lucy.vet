@@ -8,6 +8,9 @@ sections:
     title: Keeps you on schedule
     description: Intuitive scheduling tools that help clinics manage appointments, resources, and patient flow with ease.
     orientation: horizontal
+    image:
+      src: /calendar.png
+      alt: Lucy VPMS calendar view showing a month of clinic appointments
     features:
       - name: Scheduling forms for new and returning patients
         description: Flexible scheduling forms that capture all necessary information for both new and returning patients.
