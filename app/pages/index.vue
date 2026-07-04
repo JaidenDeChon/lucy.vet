@@ -185,7 +185,15 @@ useSeoMeta({
       :reverse="section.reverse"
       :features="section.features"
     >
-      <ImagePlaceholder />
+      <NuxtImg
+        v-if="section.image"
+        :src="section.image.src"
+        :alt="section.image.alt"
+        width="1920"
+        height="1005"
+        class="w-full rounded-lg ring ring-default shadow-2xl"
+      />
+      <ImagePlaceholder v-else />
     </UPageSection>
 
     <UPageSection
