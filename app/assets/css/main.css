@@ -23,6 +23,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Live product demos (app/components/demo/) replicate app.lucy.vet UI, which
+   relies on a global pointer-cursor rule in that app's own CSS. Mirror it
+   here, scoped to the demo widgets. */
+.demo-app-ui button,
+.demo-app-ui [role="button"],
+.demo-app-ui a[href],
+.demo-app-ui summary {
+  cursor: pointer;
+}
+
 .dark {
   --ui-bg: var(--ui-color-neutral-950);
   --ui-bg-muted: var(--ui-color-neutral-900);

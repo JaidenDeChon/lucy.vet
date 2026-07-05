@@ -185,8 +185,10 @@ useSeoMeta({
       :reverse="section.reverse"
       :features="section.features"
     >
+      <LazyDemoClinicShowcase v-if="section.demo === 'clinic-showcase'" />
+      <LazyDemoPatientWorkspace v-else-if="section.demo === 'patient-workspace'" />
       <NuxtImg
-        v-if="section.image"
+        v-else-if="section.image"
         :src="section.image.src"
         :alt="section.image.alt"
         width="1920"
@@ -210,6 +212,7 @@ useSeoMeta({
       </UPageGrid>
     </UPageSection>
 
+    <!-- Testimonials are disabled until we have real customer reviews.
     <UPageSection
       id="testimonials"
       :headline="page.testimonials.headline"
@@ -233,6 +236,7 @@ useSeoMeta({
         </UPageCard>
       </UPageColumns>
     </UPageSection>
+    -->
 
     <USeparator />
 
