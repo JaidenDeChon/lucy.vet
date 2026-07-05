@@ -31,8 +31,9 @@ useSeoMeta({
       :reverse="section.reverse"
       :features="section.features"
     >
+      <LazyDemoCalendarPreview v-if="section.demo === 'calendar'" />
       <NuxtImg
-        v-if="section.image"
+        v-else-if="section.image"
         :src="section.image.src"
         :alt="section.image.alt"
         width="1920"

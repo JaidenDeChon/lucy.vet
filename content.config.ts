@@ -51,6 +51,16 @@ const createImageSchema = () =>
     srcset: z.string().optional()
   })
 
+const createSectionSchema = () =>
+  createBaseSchema().extend({
+    id: z.string().nonempty(),
+    orientation: orientationEnum.optional(),
+    reverse: z.boolean().optional(),
+    image: createImageSchema().optional(),
+    demo: z.string().optional(),
+    features: z.array(createFeatureItemSchema())
+  })
+
 export const collections = {
   index: defineCollection({
     source: '0.index.yml',
@@ -59,15 +69,7 @@ export const collections = {
       hero: z.object({
         links: z.array(createLinkSchema())
       }),
-      sections: z.array(
-        createBaseSchema().extend({
-          id: z.string().nonempty(),
-          orientation: orientationEnum.optional(),
-          reverse: z.boolean().optional(),
-          image: createImageSchema().optional(),
-          features: z.array(createFeatureItemSchema())
-        })
-      ),
+      sections: z.array(createSectionSchema()),
       features: createBaseSchema().extend({
         items: z.array(createFeatureItemSchema())
       }),
@@ -95,15 +97,7 @@ export const collections = {
     source: '1.features.yml',
     type: 'page',
     schema: z.object({
-      sections: z.array(
-        createBaseSchema().extend({
-          id: z.string().nonempty(),
-          orientation: orientationEnum.optional(),
-          reverse: z.boolean().optional(),
-          image: createImageSchema().optional(),
-          features: z.array(createFeatureItemSchema())
-        })
-      )
+      sections: z.array(createSectionSchema())
     })
   }),
   docs: defineCollection({
