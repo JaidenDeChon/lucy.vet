@@ -81,7 +81,9 @@ interface DemoLedgerEvent {
   runningLabel: string
 }
 
-withDefaults(defineProps<{ mobile?: boolean }>(), { mobile: false })
+const props = withDefaults(defineProps<{ mobile?: boolean }>(), {
+  mobile: false
+})
 
 const client = {
   name: 'Maria Santos',
@@ -296,12 +298,30 @@ const selectedPet = computed(
 const clientTab = ref('general')
 const isAddPetOpen = ref(false)
 
+// On mobile the details panel lives off-screen (like the app's slideover)
+// and slides in from the right when a pet or Parent Details is tapped.
+const isMobilePanelOpen = ref(false)
+
 function selectPet(petId: string) {
   selectedPetId.value = petId
+  isMobilePanelOpen.value = true
 }
 
 function clearSelectedPet() {
   selectedPetId.value = null
+}
+
+function openParentDetails() {
+  selectedPetId.value = null
+  isMobilePanelOpen.value = true
+}
+
+function onPanelClose() {
+  if (props.mobile) {
+    isMobilePanelOpen.value = false
+  } else {
+    clearSelectedPet()
+  }
 }
 </script>
 
@@ -369,7 +389,7 @@ function clearSelectedPet() {
               label="Parent Details"
               icon="i-lucide-user"
               class="cursor-pointer"
-              @click="clearSelectedPet"
+              @click="openParentDetails"
             />
           </div>
         </div>
@@ -435,20 +455,37 @@ function clearSelectedPet() {
         </div>
       </div>
 
-      <!-- Account Details panel (right pane on desktop, stacked below on mobile) -->
+      <!-- Backdrop behind the mobile slideover -->
+      <div
+        v-if="mobile"
+        class="absolute inset-0 z-10 bg-elevated/75 transition-opacity duration-300"
+        :class="isMobilePanelOpen ? 'opacity-100' : 'pointer-events-none opacity-0'"
+        aria-hidden="true"
+        @click="isMobilePanelOpen = false"
+      />
+
+      <!-- Account Details panel: right pane on desktop; on mobile it lives
+           off-screen and slides in from the right like the app's slideover -->
       <div
         class="flex flex-col bg-elevated/50"
-        :class="mobile ? 'shrink-0 border-t border-default' : 'w-[400px] shrink-0 overflow-hidden border-l border-default'"
+        :class="
+          mobile
+            ? [
+                'absolute inset-y-0 right-0 z-20 w-[85%] max-w-[330px] border-l border-default bg-default shadow-xl transition-transform duration-300 ease-in-out',
+                isMobilePanelOpen ? 'translate-x-0' : 'translate-x-full'
+              ]
+            : 'w-[400px] shrink-0 overflow-hidden border-l border-default'
+        "
       >
         <div class="flex h-16 shrink-0 items-center gap-1.5 border-b border-default bg-default px-4">
           <UButton
-            v-if="selectedPet"
+            v-if="selectedPet || mobile"
             icon="i-lucide-x"
             color="neutral"
             variant="ghost"
             aria-label="Close details"
             class="cursor-pointer"
-            @click="clearSelectedPet"
+            @click="onPanelClose"
           />
           <div class="min-w-0 flex-1 truncate text-lg font-bold text-highlighted">
             {{ selectedPet?.name ?? 'Account Details' }}
@@ -463,7 +500,7 @@ function clearSelectedPet() {
           />
         </div>
 
-        <div :class="mobile ? '' : 'min-h-0 flex-1 overflow-y-auto'">
+        <div class="min-h-0 flex-1 overflow-y-auto">
           <!-- Pet view -->
           <div v-if="selectedPet" class="form-template">
             <div class="flex flex-col gap-6 p-6">

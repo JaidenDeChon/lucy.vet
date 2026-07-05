@@ -49,22 +49,16 @@ const tabItems = [
   { label: 'Payments', icon: 'i-lucide-credit-card' }
 ]
 
-const eventTypes = [
-  'quote_created',
-  'quote_updated',
-  'invoice_issued',
-  'payment_received',
-  'refund_issued',
-  'adjustment',
-  'credit',
-  'debit',
-  'void',
-  'cancellation'
-]
-
+// Friendly event names matching the badges shown in the list below —
+// digestible at a glance but still meaningful to clinic staff.
 const eventTypeItems = [
   { label: 'All Events', value: 'all' },
-  ...eventTypes.map((eventType) => ({ label: eventType, value: eventType }))
+  { label: 'Quote Created', value: 'quote-created' },
+  { label: 'Invoice Issued', value: 'invoice-issued' },
+  { label: 'Payment Received', value: 'payment-received' },
+  { label: 'Refund Issued', value: 'refund-issued' },
+  { label: 'Adjustment', value: 'adjustment' },
+  { label: 'Credit', value: 'credit' }
 ]
 
 const clientIdFilter = ref('')
@@ -75,7 +69,7 @@ const groups: LedgerGroup[] = [
     kind: 'multi',
     id: 'wellness',
     title: 'Annual Wellness Exam',
-    clientId: 'client-main-smith',
+    clientId: 'abcd1234',
     timestamp: 'Jun 18, 2026, 9:15 AM',
     rows: [
       {
@@ -121,7 +115,7 @@ const groups: LedgerGroup[] = [
     kind: 'multi',
     id: 'dental',
     title: 'Dental Cleaning',
-    clientId: 'client-main-chen',
+    clientId: 'efgh5678',
     timestamp: 'Jun 20, 2026, 11:00 AM',
     pastDue: true,
     rows: [
@@ -150,7 +144,7 @@ const groups: LedgerGroup[] = [
     kind: 'multi',
     id: 'microchip',
     title: 'Microchip Procedure',
-    clientId: 'client-main-rivera',
+    clientId: 'ijkl9012',
     timestamp: 'Jun 24, 2026, 10:05 AM',
     rows: [
       {
@@ -178,7 +172,7 @@ const groups: LedgerGroup[] = [
     id: 'account-payment',
     badge: 'Payment Received',
     title: 'Manual Payment',
-    clientId: 'client-main-patel',
+    clientId: 'mnop3456',
     timestamp: 'Jun 27, 2026, 4:12 PM',
     delta: '-$120.00',
     running: '$60.00'
@@ -188,7 +182,7 @@ const groups: LedgerGroup[] = [
     id: 'referral-credit',
     badge: 'Credit',
     title: 'Referral Credit',
-    clientId: 'client-main-ortiz',
+    clientId: 'qrst7890',
     timestamp: 'Jul 2, 2026, 2:45 PM',
     reason: 'Referral thank-you credit',
     delta: '-$25.00',
@@ -348,7 +342,7 @@ onBeforeUnmount(stopAutoScroll)
                 class="grid grid-cols-[minmax(0,1fr)_130px_auto_auto] gap-3 rounded-lg border border-default bg-elevated/20 p-4"
               >
                 <UFormField label="Client ID">
-                  <UInput v-model="clientIdFilter" class="w-full" placeholder="client-main-smith" />
+                  <UInput v-model="clientIdFilter" class="w-full" placeholder="abcd1234" />
                 </UFormField>
                 <UFormField label="Event Type">
                   <USelect v-model="eventTypeFilter" :items="eventTypeItems" class="w-full" />

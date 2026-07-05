@@ -212,6 +212,7 @@ useSeoMeta({
       </UPageGrid>
     </UPageSection>
 
+    <!-- Testimonials are disabled until we have real customer reviews.
     <UPageSection
       id="testimonials"
       :headline="page.testimonials.headline"
@@ -235,6 +236,7 @@ useSeoMeta({
         </UPageCard>
       </UPageColumns>
     </UPageSection>
+    -->
 
     <USeparator />
 
