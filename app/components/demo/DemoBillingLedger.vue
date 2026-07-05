@@ -324,8 +324,8 @@ onBeforeUnmount(stopAutoScroll)
         <div
           ref="scroller"
           class="min-h-0 flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          @wheel.passive="onUserScrollIntent"
-          @touchmove.passive="onUserScrollIntent"
+          @wheel.stop.passive="onUserScrollIntent"
+          @touchmove.stop.passive="onUserScrollIntent"
           @focusin="onUserScrollIntent"
           @scroll.passive="onScroll"
         >

@@ -75,9 +75,11 @@ const appointments: DemoAppointment[] = [
   }
 ]
 
-// macOS-active-window style layered shadow, slightly stronger in dark mode.
+// macOS-active-window style layered shadow in light mode; the same layers
+// recolored into a brand-green glow in dark mode (where a dark shadow would
+// be invisible).
 const cardShadow =
-  'shadow-[0_0_0_0.5px_rgba(0,0,0,0.05),0_10px_28px_rgba(0,0,0,0.18),0_2px_8px_rgba(0,0,0,0.10)] dark:shadow-[0_0_0_0.5px_rgba(255,255,255,0.08),0_10px_28px_rgba(0,0,0,0.50),0_2px_8px_rgba(0,0,0,0.35)]'
+  'shadow-[0_0_0_0.5px_rgba(0,0,0,0.05),0_10px_28px_rgba(0,0,0,0.18),0_2px_8px_rgba(0,0,0,0.10)] dark:shadow-[0_0_0_1px_color-mix(in_oklab,var(--ui-primary)_18%,transparent),0_10px_28px_color-mix(in_oklab,var(--ui-primary)_12%,transparent),0_2px_8px_color-mix(in_oklab,var(--ui-primary)_8%,transparent)]'
 </script>
 
 <template>

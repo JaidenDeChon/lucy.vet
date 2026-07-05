@@ -91,7 +91,8 @@ const layout = computed(() => {
 </template>
 
 <style scoped>
-/* macOS-active-window style layered shadow */
+/* macOS-active-window style layered shadow (light mode); the same layers
+   recolored into a brand-green glow in dark mode */
 .demo-window-shadow {
   box-shadow:
     0 0 0 0.5px rgb(0 0 0 / 0.06),
@@ -104,5 +105,20 @@ const layout = computed(() => {
   box-shadow:
     0 2px 6px rgb(0 0 0 / 0.12),
     0 12px 32px rgb(0 0 0 / 0.28);
+}
+
+:global(.dark .demo-window-shadow) {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--ui-primary) 18%, transparent),
+    0 2px 6px color-mix(in oklab, var(--ui-primary) 8%, transparent),
+    0 12px 24px color-mix(in oklab, var(--ui-primary) 10%, transparent),
+    0 28px 64px color-mix(in oklab, var(--ui-primary) 14%, transparent);
+}
+
+:global(.dark .demo-phone-shadow) {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--ui-primary) 18%, transparent),
+    0 2px 6px color-mix(in oklab, var(--ui-primary) 9%, transparent),
+    0 12px 32px color-mix(in oklab, var(--ui-primary) 16%, transparent);
 }
 </style>
