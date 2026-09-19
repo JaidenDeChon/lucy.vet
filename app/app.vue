@@ -17,8 +17,8 @@ useHead({
 
 useSeoMeta({
   titleTemplate: '%s - Lucy VPMS',
-  ogImage: '/social-thumbnail.png',
-  twitterImage: '/social-thumbnail.png',
+  ogImage: '/social-thumbnail-v2.png',
+  twitterImage: '/social-thumbnail-v2.png',
   twitterCard: 'summary_large_image'
 })
 

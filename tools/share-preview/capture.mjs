@@ -1,4 +1,4 @@
-// Renders tools/share-preview/index.html to public/social-thumbnail.png at the
+// Renders tools/share-preview/index.html to public/social-thumbnail-v2.png at the
 // standard 1200x630 Open Graph / Twitter summary_large_image size (1.91:1).
 //
 // The card is captured at 2x and downsampled back to 1200x630 so text and the
@@ -16,7 +16,7 @@ const SCALE = 2
 
 const source = fileURLToPath(new URL('./index.html', import.meta.url))
 const output = fileURLToPath(
-  new URL('../../public/social-thumbnail.png', import.meta.url)
+  new URL('../../public/social-thumbnail-v2.png', import.meta.url)
 )
 
 const browser = await chromium.launch()
