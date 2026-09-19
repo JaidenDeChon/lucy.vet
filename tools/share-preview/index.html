@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lucy VPMS — share preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Values mirror the live hero: app/assets/css/main.css (green scale),
+         app/components/HeroBackground.vue (glow + dot grid) and the Nuxt UI
+         dark palette (neutral = zinc). */
+      :root {
+        --green-400: #00dc82;
+        --bg: #09090b; /* --ui-bg, dark */
+        --text-highlighted: #fff;
+        --text-muted: #a1a1aa; /* zinc-400 */
+        --text-dimmed: #71717a; /* zinc-500 */
+
+        --card-width: 1200px;
+        --card-height: 630px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: var(--card-width);
+        height: var(--card-height);
+        overflow: hidden;
+        background: var(--bg);
+      }
+
+      body {
+        font-family: 'Public Sans', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .card {
+        position: relative;
+        display: flex;
+        width: var(--card-width);
+        height: var(--card-height);
+        overflow: hidden;
+        background: var(--bg);
+      }
+
+      /* HeroBackground.vue: primary glow anchored bottom-right over a dot grid. */
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 100% 100%,
+            color-mix(in srgb, var(--green-400) 28%, transparent) 0%,
+            color-mix(in srgb, var(--green-400) 12%, transparent) 38%,
+            transparent 72%
+          ),
+          radial-gradient(
+            circle,
+            color-mix(in srgb, var(--green-400) 35%, transparent) 1px,
+            transparent 1px
+          );
+        background-size:
+          100% 100%,
+          18px 18px;
+      }
+
+      .content {
+        position: relative;
+        display: flex;
+        flex: 1;
+        align-items: stretch;
+      }
+
+      .copy {
+        display: flex;
+        flex-direction: column;
+        width: 660px;
+        padding: 56px 0 52px 64px;
+      }
+
+      /* Brand lockup, matching AppHeader.vue. */
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+
+      .brand p {
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--green-400);
+        line-height: 1;
+      }
+
+      .brand span {
+        font-weight: 400;
+        color: var(--text-highlighted);
+      }
+
+      /* UBadge, color="primary" variant="subtle". */
+      .badge {
+        align-self: flex-start;
+        margin-top: 38px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        background: color-mix(in srgb, var(--green-400) 10%, transparent);
+        box-shadow: inset 0 0 0 1px
+          color-mix(in srgb, var(--green-400) 25%, transparent);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--green-400);
+      }
+
+      h1 {
+        margin-top: 22px;
+        font-size: 74px;
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--text-highlighted);
+      }
+
+      h1 em {
+        font-style: normal;
+        color: var(--green-400);
+      }
+
+      .description {
+        margin-top: 22px;
+        max-width: 580px;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.55;
+        color: var(--text-muted);
+      }
+
+      .domain {
+        margin-top: auto;
+        padding-top: 28px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: var(--text-dimmed);
+      }
+
+      .portrait {
+        position: relative;
+        flex: 1;
+      }
+
+      .portrait img {
+        position: absolute;
+        right: 34px;
+        bottom: 0;
+        width: 462px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="content">
+        <div class="copy">
+          <div class="brand">
+            <img src="../../public/app-logo.svg" alt="" />
+            <p>Lucy<span>VPMS</span></p>
+          </div>
+
+          <div class="badge">Now in Pre-Alpha</div>
+
+          <h1>Level up<br />your <em>VPMS.</em></h1>
+
+          <p class="description">
+            Schedule appointments, generate invoices, manage inventory, and
+            more. Lucy VPMS is the Veterinary Practice Management System that
+            streamlines your clinic operations in the cloud, on any device.
+          </p>
+
+          <div class="domain">lucy.vet</div>
+        </div>
+
+        <div class="portrait">
+          <img src="../../public/lucy.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
